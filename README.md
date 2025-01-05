@@ -1,6 +1,6 @@
 # ♟️ Two-Player Chess Game
 
-## Project link - [*Two-Player Chess Game*]()
+## Project link - [*Two-Player Chess Game*](https://chessbyraj.netlify.app/)
 
 A browser-based two-player chess game built with **HTML**, **CSS**, and **JavaScript**. This project demonstrates concepts like **game logic**, **DOM manipulation**, and **event handling** while recreating the classic chess experience.
 
