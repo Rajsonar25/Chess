@@ -1,0 +1,169 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(-135deg,#d2803c, #f0d9b5, #d2803c); /* Gradient matching chessboard colors */
+  font-family: 'Arial', sans-serif;
+}
+.turn{
+  color: #a5754d;
+  font-weight: bolder;
+  margin-bottom: 10px;
+}
+.chess-heading {
+  text-align: center;
+  font-size: 48px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 10px;
+  font-family: 'Georgia', serif;
+  letter-spacing: 4px;
+  background: linear-gradient(to right, #b58863, #5a3e36); /* Gradient matching chessboard colors */
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glow 2s infinite alternate;
+}
+
+/* Add smooth transition for highlights */
+.square {
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+@keyframes glow {
+  0% {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  100% {
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.8), 0 0 20px rgba(255, 215, 0, 0.6);
+  }
+}
+/* Add to your existing CSS */
+.square.highlight {
+  background-color: rgba(0, 255, 0, 0.3);
+  box-shadow: inset 0 0 10px rgba(0, 200, 0, 0.9);
+}
+
+.square.highlight-capture {
+  background-color: rgb(255, 0, 0,0.3);
+  box-shadow: inset 0 0 10px rgba(200, 120, 0, 0.9);
+}
+
+.chessBoard {
+  width: 80vw;
+  height: 80vw;
+  max-width: 600px;
+  max-height: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  border: 15px solid #5a3e36; /* Dark brown border */
+  border-radius: 10px;
+  background-color: #8b4513; /* Wooden brown background */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.square {
+  width: 12.5%;
+  height: 12.5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: px;
+  border-radius: 3px  ;
+  box-sizing: border-box;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.square:hover {
+  background-color: rgba(170, 155, 37, 0.8) !important;
+  transform: scale(1.1);
+  z-index: 2;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+}
+
+.white {
+  background-color: #f0d9b5; /* Light brown for white squares */
+}
+
+.black {
+  background-color: #b58863; /* Dark brown for black squares */
+}
+
+.coordinate {
+  position: absolute;
+  font-size: 12px;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.7);
+  pointer-events: none;
+}
+
+.rank {
+  top: 5px;
+  left: 5px;
+}
+
+.file {
+  bottom: 5px;
+  left: 5px;
+}
+
+.whiteText {
+  color: #f0d9b5; /* Light brown text */
+}
+
+.blackText {
+  color: #b58863; /* Dark brown text */
+}
+
+.piece {
+  width: 80%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.piece img {
+  max-width: 100%;
+  max-height: 100%;
+  pointer-events: none;
+}
+
+.piece:hover {
+  transform: scale(1.1);
+}
+
+#alert {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  z-index: 1000;
+  display: none;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 600px) {
+  .coordinate {
+    font-size: 8px;
+  }
+
+  .chessBoard {
+    width: 90vw;
+    height: 90vw;
+    border-width: 10px;
+  }
+}
